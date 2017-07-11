@@ -1,0 +1,357 @@
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+/******** Reused *********/
+
+.no-padding {
+    padding: 0;
+}
+
+.mt-trash {
+    background-color: #e74c3c !important;
+}
+
+.mt-left {
+    text-align: right;
+}
+
+.mt-trangthai {
+    padding: 3px;
+}
+
+.datepicker:hover {
+    cursor: pointer !important;
+}
+
+
+/************************************** MAI THANH HOME *****************************************/
+
+
+/**************** LEFT MT *************/
+
+
+/*** LOGO ***/
+
+#mt-logo {
+    font-size: 20px;
+    font-weight: bold;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    background-color: #2196F3;
+}
+
+#mt-logo:after {
+    content: ' ';
+    position: absolute;
+    top: 10px;
+    right: 0;
+    display: inline-block;
+    width: 1.5px;
+    height: 20px;
+    background-color: #322326;
+}
+
+
+/*** MENU ***/
+
+#mt-menu {
+    background-color: #18363E;
+}
+
+#mt-menu li {
+    height: 40px;
+    line-height: 40px;
+    text-align: left;
+    padding-left: 20px;
+    font-size: 16px;
+    border-bottom: 1px solid #f3f3f3;
+    ;
+}
+
+#mt-menu a {
+    display: inline-block;
+    width: 100%;
+    color: #B1BABF;
+}
+
+#mt-menu a:hover {
+    text-decoration: none !important;
+}
+
+
+/**************** RIGHT MT *************/
+
+
+/*** DETAIL ***/
+
+#mt-detail {
+    height: 40px;
+    background-color: #2196F3;
+    line-height: 40px;
+}
+
+#mt-detail-left {
+    font-size: 17px;
+    color: #fff;
+}
+
+#mt-detail-right {
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+#mt-detail-right:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+/*** DASHBOARD ***/
+
+#mt-dashboard {
+    height: 600px;
+    background-color: #f3f3f3;
+    padding: 10px;
+}
+
+#mt-dashboard-add {
+    background-color: #2196F3;
+    background-image: none;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 17px;
+    text-align: left;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+#mt-dashboard-add:hover {
+    background-color: #0c7cd5;
+}
+
+#mt-dashboard-add i {
+    padding-right: 10px;
+}
+
+#mt-dashboard-table thead {
+    background-color: #18363E;
+    color: #95989A;
+}
+
+#mt-dashboard-header {
+    background-color: #18363E;
+    color: #95989A;
+}
+
+#mt-dashboard-table th {
+    text-align: center;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+#mt-dashboard-table td {
+    line-height: 25px;
+    text-align: center;
+    font-size: 15px;
+}
+
+#mt-dashboard-table th,
+#mt-dashboard-table td {
+    padding: 8px;
+    border: 1px solid #A7C6DB;
+}
+
+#mt-dashboard-table tr:nth-child(even) {
+    background-color: #B6E0F8;
+}
+
+.mt-dashboard-tables {
+    background-color: #2196F3;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    padding: 5px 10px;
+}
+
+.mt-dashboard-tables i {
+    font-size: 17px;
+}
+
+.mt-dashboard-mess {
+    font-weight: bold;
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+    background-color: #2196F3;
+    padding: 5px 10px;
+}
+
+
+/************************************** MAI THANH POPUP *****************************************/
+
+#mt-popup-add {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #18363E;
+    opacity: 0.95;
+}
+
+
+/************** MT ADD PRODUCT ****************/
+
+#mt-addproduct {
+    /*    display: none;*/
+}
+
+#mt-popup-tx {
+    font-size: 25px;
+    text-align: center;
+    padding-top: 20px;
+    font-weight: bold;
+    padding-bottom: 20px;
+    color: #fff;
+}
+
+.mt-popup-container li {
+    text-align: right;
+    padding-bottom: 15px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.mt-popup-container li span {
+    display: inline-block;
+    max-width: 150px;
+    vertical-align: middle;
+    padding-right: 10px;
+}
+
+.mt-popup-container input {
+    display: inline-block !important;
+    width: 40%;
+    vertical-align: middle;
+}
+
+#mt-container-left i {
+    padding-left: 10px;
+}
+
+.mt-combobox {
+    width: 40%;
+    color: #333;
+    height: 34px;
+    border-radius: 4px;
+}
+
+#mt-popup-btleft,
+.mt-save-btn {
+    background-color: #2196F3;
+}
+
+#mt-popup-btleft,
+#mt-popup-btright,
+.mt-save-btn {
+    padding: 10px 50px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #fff;
+    font-weight: bold;
+}
+
+#mt-popup-btright {
+    background-color: #F36E54;
+}
+
+#mt-soLuongCONTs {
+    text-align: center;
+    color: #fff;
+    font-size: 19px;
+    padding-bottom: 20px;
+}
+
+#mt-soLuongCONTs>input {
+    margin-left: 10px;
+    padding: 10px;
+    border: none;
+    color: #000;
+    border-radius: 3px;
+}
+
+
+/********* MT Completely PRODUCT && MT Nhap To Khai ********/
+
+#mt-nhapToKhaiHaiQuan {
+    color: #fff;
+}
+
+#mt-completely {
+    color: #fff;
+    display: none;
+}
+
+#mt-completely>div,
+#mt-nhapToKhaiHaiQuan>div {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#mt-completely span,
+#mt-nhapToKhaiHaiQuan span {
+    display: block;
+    width: 100%;
+    height: 50px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background-color: #2196F3;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 50px;
+}
+
+#mt-completely>div>div,
+#mt-nhapToKhaiHaiQuan>div>div {
+    display: block;
+    width: 100%;
+    height: 150px;
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    line-height: 150px;
+    font-size: 25px;
+}
+
+#mt-completely ul>li,
+#mt-nhapToKhaiHaiQuan ul>li {
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    height: 50px;
+    text-align: center;
+}
+
+#mt-completely ul>li>button,
+#mt-nhapToKhaiHaiQuan ul>li>button {
+    margin-top: 8px;
+    width: auto;
+    height: auto;
+    background-color: #2196F3;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 3px;
+}

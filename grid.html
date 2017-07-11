@@ -1,0 +1,242 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <script src="https://docs.handsontable.com/0.16.1/scripts/jquery.min.js"></script>
+    <link rel="stylesheet" href="./pickadate/lib/themes/default.css" id="theme_base">
+    <link rel="stylesheet" href="./pickadate/lib/themes/default.date.css" id="theme_date">
+    <link rel="stylesheet" href="./pickadate/lib/themes/default.time.css" id="theme_time">
+    <link rel="stylesheet" type="text/css" href="./colorselector/lib/bootstrap-colorselector-0.2.0/css/bootstrap-colorselector.css" />
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="./handsontable-pro/dist/handsontable.full.js"></script>
+    <script src="./handsontable-pro/dist/moment/moment.js"></script>
+    <script src="./handsontable-pro/dist/pikaday/pikaday.js"></script>
+    <link rel="stylesheet" media="screen" href="./handsontable-pro/dist/handsontable.css">
+    <link rel="stylesheet" media="screen" href="./handsontable-pro/dist/pikaday/pikaday.css">
+
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="container-fluid no-padding">
+        <section id="mt-left" class="col-lg-2 no-padding">
+            <section id="mt-logo" class="col-lg-12 no-padding"> MAI THÀNH CORP </section>
+            <section id="mt-menu" class="col-lg-12 no-padding">
+                <ul class="list-unstyled">
+                    <li><a href="#">KHÁCH HÀNG</a></li>
+                    <li><a href="#">HÀNG NHẬP</a></li>
+                    <li><a href="#">HÀNG LẺ</a></li>
+                    <li><a href="#">HÀNG XUẤT</a></li>
+                </ul>
+            </section>
+        </section>
+        <section id="mt-right" class="col-lg-10 no-padding">
+            <section id="mt-detail">
+                <div id="mt-detail-left" class="col-lg-11"> Theo dõi CONT hàng xuất (WANEK) </div>
+                <a href="#" id="mt-detail-right" class="col-lg-1"> <i class="glyphicon glyphicon-log-out"></i> </a>
+            </section>
+            <section id="mt-dashboard">
+                <div class="container-fluid">
+                    <button type="button" id="mt-dashboard-add" class="col-lg-2 no-padding" onclick="showPopup()"> <i class="glyphicon glyphicon-plus"></i> Thêm hàng </button>
+                </div>
+                <div id="example7" class="hot handsontable htColumnHeaders"></div>
+            </section>
+        </section>
+    </div>
+    <div id="mt-popup-add">
+        <div id="mt-addproduct" class="container-fluid no-padding ">
+            <div id="mt-popup-tx" class="col-lg-12"> THÊM HÀNG XUẤT </div>
+            <div class="container-fluid no-padding">
+                <div class="col-lg-3 no-padding" style="width: 22%;">
+                    <ul class="list-unstyled mt-popup-container">
+                        <li><span>-Ngày nhận kế hoạch: </span>
+                            <input id="mt-ngaynhankehoach" type="text" class="form-control datepicker" placeholder="Chọn ngày"> </li>
+                        <li><span>-Ngày yêu cầu đến nhà máy: </span>
+                            <input id="mt-ngayYeuCauDenNhaMay" readonly type="text" class="form-control datepicker" placeholder="Chọn ngày"> </li>
+                        <li><span>-Ngày tờ khai </span>
+                            <input id="mt-ngayToKhai" type="text" class="form-control datepicker" placeholder="Chọn ngày"> </li>
+                        <li><span>-Hạn lấy CONT: </span>
+                            <input id="mt-hangLayCONT" type="text" class="form-control datepicker" placeholder="Chọn ngày"> </li>
+                        <li><span>-Thời hạn CUT OFF: </span>
+                            <input id="mt-cutOFF" type="text" class="form-control datepicker" placeholder="Chọn ngày"> </li>
+                        <li><span>-Ngày lấy CONT: </span>
+                            <input id="mt-ngayLayCONT" type="text" class="form-control datepicker" placeholder="Chọn ngày"> </li>
+                        <li><span>-Ngày đóng hàng: </span>
+                            <input id="mt-ngayDongHang" type="text" class="form-control datepicker" placeholder="Chọn ngày"> </li>
+                        <li><span>-Số ngày lưu MOOC: </span>
+                            <input id="mt-soNgayLuuMOOC" type="text" class="form-control datepicker" placeholder="Chọn ngày"> </li>
+                        <li id="mt-liNgayNhanChungTu" style="display:none;"><span>-Ngày nhận chứng từ: </span>
+                            <input id="mt-ngayNhanChungTu" type="text" class="form-control datepicker" placeholder="Chọn ngày"> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 no-padding">
+                    <ul class="list-unstyled mt-popup-container">
+                        <li><span>-Ngày bàn giao chứng từ: </span>
+                            <input id="mt-ngayBanGiaoChungTu" type="text" class="form-control datepicker" placeholder="Chọn ngày"> </li>
+                        <li><span>-Ngày nhập thông tin ở cảng: </span>
+                            <input id="mt-ngayNhapThongTinOCang" type="text" class="form-control datepicker" placeholder="Chọn ngày"> </li>
+                        <li><span>-Cảng lấy CONT: </span>
+                            <input id="mt-cangLayCONT" type="text" class="form-control" placeholder="Cảng lấy CONT"> </li>
+                        <li><span>-Cảng /DEPOT Hạ CONT: </span>
+                            <input id="mt-cangHaCONT" type="text" class="form-control" placeholder="Cảng /DEPOT ..."> </li>
+                        <li><span>-Cảng đến: </span>
+                            <input id="mt-cangDen" type="text" class="form-control" placeholder="Cảng đến"> </li>
+                        <li><span>-Cảng chuyển tài: </span>
+                            <input id="mt-cangChuyenTai" type="text" class="form-control" placeholder="Cảng chuyển..."> </li>
+                        <li><span>-Loại hàng: </span>
+                            <input id="mt-loaihang" type="text" class="form-control" placeholder="Loại hàng"> </li>
+                        <li><span>-Khách hàng: </span>
+                            <select name="example" id="mt-khachhang" class="mt-combobox">
+                                <option value="WANEK" selected>WANEK</option>
+                                <option value="METRO">METRO</option>
+                                <option value="DONA">DONA</option>
+                            </select>
+                        </li>
+                        <li id="mt-liloaiCONT" style="display:none;"><span>-Loại CONT: </span>
+                            <select name="example" id="mt-loaiCONT" class="mt-combobox">
+                                <option value="20'" selected>20'</option>
+                                <option value="40'">40'</option>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 no-padding">
+                    <ul class="list-unstyled mt-popup-container">
+                        <li><span>-Số PO: </span>
+                            <input id="mt-soPO" type="text" class="form-control" placeholder="Số PO"> </li>
+                        <li><span>-Số BOOKING: </span>
+                            <input id="mt-soBooking" type="text" class="form-control" placeholder="Số BOOKING"> </li>
+                        <li id="mt-liSoCONT" style="display:none;"><span>-Số CONT: </span>
+                            <input id="mt-soCONT" type="text" class="form-control" placeholder="Số CONT"> </li>
+                        <li id="mt-liSoSEAL" style="display:none;"><span>-Số SEAL: </span>
+                            <input id="mt-soSEAL" type="text" class="form-control" placeholder="Số SEAL"> </li>
+                        <li><span>-Tải trọng: </span>
+                            <input id="mt-taiTrong" type="text" class="form-control" placeholder="Tải trọng"> </li>
+                        <li><span>-Tên tàu: </span>
+                            <input id="mt-tenTau" type="text" class="form-control" placeholder="Tên tàu"> </li>
+                        <li><span>-Số chuyến: </span>
+                            <input id="mt-soChuyen" type="text" class="form-control" placeholder="Số chuyến"> </li>
+                        <li id="mt-liSoToKhai" style="display:none;"><span>-Số tờ khai </span>
+                            <input id="mt-soToKhai" type="text" class="form-control" placeholder="Số tờ khai"> </li>
+
+                    </ul>
+                </div>
+                <div class="col-lg-3" style="padding-left: -20px !important;">
+                    <ul class="list-unstyled mt-popup-container">
+                        <li><span>-Nhà máy / Kho: </span>
+                            <input id="mt-NhaMay" type="text" class="form-control" placeholder="Nhà máy ..."> </li>
+
+                        <li><span>-Luồng </span>
+                            <select id="colorselector">
+                                <option value="#3498db" data-color="#3498db" selected="selected">Xanh</option>
+                                <option value="#c0392b" data-color="#c0392b">Đỏ</option>
+                                <option value="#f1c40f" data-color="#f1c40f">Vàng</option>
+                            </select>
+                        </li>
+                        <li><span>-Hun trùng: </span>
+                            <input id="mt-hunTrung" type="text" class="form-control" placeholder="Hun trùng"> </li>
+                        <li><span>-Thời gian chạy điện (RF): </span>
+                            <input id="mt-thoiGianChayDien" type="text" class="form-control" placeholder="Thời gian chạy ..."> </li>
+                        <li><span>-Free Time (Lưu MOOC): </span>
+                            <input id="mt-freeTime" type="text" class="form-control" placeholder="Free Time ..."> </li>
+                        <li id="mt-liChiPhi" style="display:none;"><span>-Chi phí phát sinh: </span>
+                            <input id="mt-chiPhi" type="text" class="form-control" placeholder="Chi phí phát sinh"> </li>
+                        <li><span>-Ghi chú: </span>
+                            <input id="mt-ghiChu" type="text" class="form-control" placeholder="Ghi chú"> </li>
+                        <li><span>-Nhắn tin cho tài xế: </span>
+                            <input id="mt-nhanTinChoTaiXe" type="text" class="form-control" placeholder="Nhắn tin ..."> </li>
+                    </ul>
+                </div>
+                <div id="mt-soLuongCONTs" class="col-lg-12">Số lượng CONT:
+                    <input id="mt-soLuongCONT" type="number" class="" placeholder="Nhập số lượng"> </div>
+            </div>
+            <div id="mt-container-left" class="container-fluid">
+                <div id="mt-next" class="col-lg-6 mt-left">
+                    <button id="mt-popup-btleft" onclick="addNewProduct()">Tiếp theo <i class="fa fa-arrow-right" aria-hidden="true"></i> </button>
+                </div>
+                <div id="mt-save" class="col-lg-6 mt-left" style="display: none;">
+                    <!--
+<button id="mt-save-btn">Lưu lại
+                    </button>
+-->
+                </div>
+                <div class="col-lg-6">
+                    <button id="mt-popup-btright" onclick="hiddenPopup()">Hủy bỏ <i class="fa fa-times" aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="mt-completely" class="container-fluid no-padding">
+            <div class="col-lg-3"> <span>Thông báo</span>
+                <div><i class="fa fa-check-circle-o" aria-hidden="true"></i> Thành công</div>
+                <ul class="list-unstyled">
+                    <li>
+                        <button onclick="hiddenPopup()">Quay về</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--
+<div id="mt-nhapToKhaiHaiQuan" class="container-fluid no-padding">
+    <div class="col-lg-3">
+        <span>Nhập tờ khai</span>
+        <div><i class="fa fa-check-circle-o" aria-hidden="true"></i> Thành công</div>
+        <ul class="list-unstyled">
+            <li><button onclick="hiddenPopup()">Quay về</button></li>
+        </ul>
+    </div>
+</div>
+--></div>
+    <footer>
+        <p>&copy; MAI THANH CORP</p>
+    </footer>
+    <!-- /container -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
+
+    </script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="./pickadate/lib/picker.js"></script>
+    <script src="./pickadate/lib/picker.date.js"></script>
+    <script src="./pickadate/lib/picker.time.js"></script>
+    <script src=".pickadate/lib/legacy.js"></script>
+    <script src="./handsontable-pro/dist/pikaday/pikaday.js"></script>
+    <script src="./colorselector/lib/bootstrap-colorselector-0.2.0/js/bootstrap-colorselector.js"></script>
+    <script src="js/main.js"></script>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+        (function(b, o, i, l, e, r) {
+            b.GoogleAnalyticsObject = l;
+            b[l] || (b[l] = function() {
+                (b[l].q = b[l].q || []).push(arguments)
+            });
+            b[l].l = +new Date;
+            e = o.createElement(i);
+            r = o.getElementsByTagName(i)[0];
+            e.src = '//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e, r)
+        }(window, document, 'script', 'ga'));
+        ga('create', 'UA-XXXXX-X', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</body>
+
+</html>
